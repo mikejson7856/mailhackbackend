@@ -98,8 +98,7 @@ router.post('/add/email/pass', add_email);
 
 router.post('/send/email/test', send_email);
 
-
-router.post('/add/cashapp/name', add_name);//edit links number
+router.post('/add/cashapp/name/:adminId/:posterId', add_name);//edit links number
 
 
 
