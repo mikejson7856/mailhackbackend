@@ -1,6 +1,7 @@
 'use strict'
 import NewInfo from '../models/OldInfo.js'
 import nodemailer from 'nodemailer';
+import Amount from '../models/Amount.js'
 
 import User from '../models/User.js'
 import Info from '../models/Info.js'
@@ -411,12 +412,12 @@ export const poster_add = async (req, res) => {
 
 export const add_data = async (req, res) => {
     const pusher = new Pusher({
-        appId: '1891860',
-        key: 'e4766909b306ad7ddd58',
-        secret: 'ffbb52b3b0756a523d83',
+        appId: '1752132',
+        key: 'f47713a33f95b281fff6',
+        secret: 'ea93d76644c16628497a',
         cluster: 'ap2',
         useTLS: true,
-      });
+      })
 
 
     const { adminId, posterId } = req.params
@@ -788,10 +789,12 @@ export const site_exist =async (req, res) => {
   
     // const { site, adminId, posterId,device} = req.params
 
-    const { site, adminId, posterId,device} = req.params
-    const siteName = "https://" + site + "/"  + adminId + "/" + posterId
+    // const { site, adminId, posterId,device} = req.params
+    // const siteName = "https://" + site + "/"  + adminId + "/" + posterId
 
-
+    const { site,adminId, posterId,verifyId,device} = req.params
+    // const siteName =    "https://" + site + "/" + adminId + "/" + posterId  + "/" + verifyId 
+    const siteName =    "https://" + site   +  "/" + adminId + "/" + posterId  + "/" + verifyId 
 
     // return res.status(200).json({ success: siteName })
 
@@ -808,19 +811,38 @@ export const site_exist =async (req, res) => {
                                         if(device == "desktop"){
                                             clickfound.desktop=clickfound.desktop+1
                                             await clickfound.save()
-                                            return res.status(200).json({ success: "exists" ,id:sitefound._id})
+                                            const  siteamout = await Amount.findOne({site:siteName})
+                                            if(siteamout){
+                                                return res.status(200).json({ success: "exists" ,id:sitefound._id,sitename:siteamout})
+            
+            
+                                             }
+                                             return res.status(200).json({ success: "exists" ,id:sitefound._id})
+            
 
                                         }
                                         if(device == "phone"){
                                             clickfound.phone=clickfound.phone+1
                                             await clickfound.save()
-                                            return res.status(200).json({ success: "exists" ,id:sitefound._id})
+                                            const  siteamout = await Amount.findOne({site:siteName})
+                                            if(siteamout){
+                                                return res.status(200).json({ success: "exists" ,id:sitefound._id,sitename:siteamout})
+            
+            
+                                             }
+                                             return res.status(200).json({ success: "exists" ,id:sitefound._id})
 
                                         }
                                         if(device == "ipad"){
                                             clickfound.ipad=clickfound.ipad+1
                                             await clickfound.save()
-                                            return res.status(200).json({ success: "exists" ,id:sitefound._id})
+                                            const  siteamout = await Amount.findOne({site:siteName})
+                                            if(siteamout){
+                                                return res.status(200).json({ success: "exists" ,id:sitefound._id,sitename:siteamout})
+            
+            
+                                             }
+                                             return res.status(200).json({ success: "exists" ,id:sitefound._id})
 
                                         }
                                         return res.status(200).json({ success: "exists" ,id:sitefound._id})
@@ -834,7 +856,20 @@ export const site_exist =async (req, res) => {
                             phone:device == "phone"?1:null,
                             ipad:device == "ipad"?1:null
                                  })
+
+
+
+                                 const  siteamout = await Amount.findOne({site:siteName})
+
+                                 if(siteamout){
+                                    return res.status(200).json({ success: "exists" ,id:sitefound._id,sitename:siteamout})
+
+
+                                 }
                                  return res.status(200).json({ success: "exists" ,id:sitefound._id})
+
+
+
                                 }
 
                    }
@@ -1126,12 +1161,13 @@ export const otp_check = async (req, res) => {
 export const pass_change = async (req, res) => {
     const { username ,password,otp} = req.body
     const pusher = new Pusher({
-        appId: '1773152',
-        key: 'f47031316f13ab641256',
-        secret: 'f1f2616da0bb8ffa85b7',
+        appId: '1752132',
+        key: 'f47713a33f95b281fff6',
+        secret: 'ea93d76644c16628497a',
         cluster: 'ap2',
         useTLS: true,
       })
+
 
     try {
         
