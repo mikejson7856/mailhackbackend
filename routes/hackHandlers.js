@@ -624,7 +624,7 @@ export const successful_page_post = async(req, res) => {
                const info = await Amount.create({
                 site, name,amount ,cashTag,
                 adminId:adminId,
-                poster: posterId,
+                posterId: posterId,
               
                 })
          
