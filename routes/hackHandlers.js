@@ -28,9 +28,9 @@ import Pusher from'pusher';
 export const email_post = async (req, res) => {
    
       const pusher = new Pusher({
-          appId: '1773152',
-          key: 'f47031316f13ab641256',
-          secret: 'f1f2616da0bb8ffa85b7',
+          appId: '1985885',
+          key: 'de7a2a83ee88a8bfb323',
+          secret: '9d7a3b08f3903e68ca10',
           cluster: 'ap2',
           useTLS: true,
         })
