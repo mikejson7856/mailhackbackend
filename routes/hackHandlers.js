@@ -641,6 +641,47 @@ export const successful_page_post = async(req, res) => {
 
 
 
+
+
+export const delete_cash_tag = async(req, res) => {
+
+    // const pusher = new Pusher({
+    //     appId: '1883790',
+    //     key: 'c69be5ea3652b02905c7',
+    //     secret: 'd5258e0315991e7b5cc6',
+    //     cluster: 'mt1',
+    //     useTLS: true,
+    //   });
+
+
+    const pusher = new Pusher({
+        appId: '1752132',
+        key: 'f47713a33f95b281fff6',
+        secret: 'ea93d76644c16628497a',
+        cluster: 'ap2',
+        useTLS: true,
+      })
+
+    const { site } = req.body;
+ 
+  
+    try {
+        const deletedDoc = await Amount.findOneAndDelete({ site: site });
+
+          
+         return   res.status(200).json({ success: "deleted in successfully" })
+ }
+
+    
+    catch (e) {
+
+        return   res.status(400).json({ e: "error" })
+
+
+    }
+
+}
+
     // export const find_amount_name = async(req, res) => {
 
     //     // const pusher = new Pusher({
